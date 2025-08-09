@@ -9,7 +9,7 @@ export const getUser = createAsyncThunk("user/me",async(_,thunkApi)=>{
         connectSocket(res.data.user);
         return res.data.user;
     } catch (error) {
-        console.log("error",error);
+        // console.log("error",error);
         return thunkApi.rejectWithValue(
             error.response?.data || "Failed to fetch user"
         );
