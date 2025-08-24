@@ -4,7 +4,7 @@ let socket=null;
 
 
 export const connectSocket = (userId) => {
-    socket = io('http://localhost:8000',{
+    socket = io(process.env.VITE_API_BASE_URL,{
         query : {userId}
     });
 
