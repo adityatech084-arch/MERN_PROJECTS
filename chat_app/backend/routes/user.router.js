@@ -11,8 +11,8 @@ import multer from 'multer';
 const upload=multer({});
 const router = express.Router();
 
-router.post('/sign-up',authentacationMidelaver(signup))
-router.post('/sign-in',authentacationMidelaver(signin));
+router.post('/sign-up',signup)
+router.post('/sign-in',signin);
 router.get('/sign-out',authentacationMidelaver,signout);
 router.get('/me',authentacationMidelaver,getUser)
 router.put('/update-profile',authentacationMidelaver,updateProfile);
