@@ -178,7 +178,7 @@ function Sidebar() {
             />
             Show Online only
           </label>
-          <span className="text-xs text-gray-500">({onlineusers.length} online)</span>
+          <span className="text-xs text-gray-500">({onlineusers.length - 1} online)</span>
         </div>
 
         {/* User list */}
