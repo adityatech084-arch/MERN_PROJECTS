@@ -116,7 +116,9 @@ function Sidebar() {
     socket.on('new-user-added', () => {
       dispatch(getUsers());
     });
-
+  socket.on('online-users', (usersOnlineArray) => {
+    dispatch(setOnlineUsers(usersOnlineArray)); // 🟢 update Redux
+  });
     // Cleanup to avoid memory leaks
     return () => {
       socket.off('new-user-added');
