@@ -6,6 +6,7 @@ import { Camera, Loader2, Mail, User } from 'lucide-react';
 import avatarImg from "../assets/user.jpg"
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 function Profile() {
   const {isupdatingProfile,authUser}=useSelector((state)=>state.auth);
   const[selectedImage,setSelectedImage]=useState(null);
@@ -14,6 +15,16 @@ function Profile() {
     email: authUser?.email || "",
     avatar:  null,
   })
+    useEffect(() => {
+    if (authUser) {
+      setformData({
+        fullName: authUser.fullName || "",
+        email: authUser.email || "",
+        avatar: null,
+      });
+      setSelectedImage(null); // reset selected image on authUser change (optional)
+    }
+  }, [authUser]);
   const navigate = useNavigate();
 const dispatch = useDispatch();
 const handleImageUpload =(e)=>{

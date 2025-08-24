@@ -20,7 +20,7 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    
     dispatch(signup(formData)); // ← replace with your login action
   };
 
