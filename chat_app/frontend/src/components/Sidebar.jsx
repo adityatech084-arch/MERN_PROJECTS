@@ -95,6 +95,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsers, setSelectedUser } from '../store/chatSlice.js';
+import { setOnlineUsers } from '../store/authSlice.js';
 import { User, Menu, X } from 'lucide-react';
 import userImg from "../assets/user.jpg";
 import SidebarSkeleton from './SidebarSkeleton.jsx';
