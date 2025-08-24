@@ -123,8 +123,9 @@ function Sidebar() {
     // Cleanup to avoid memory leaks
     return () => {
       socket.off('new-user-added');
+             socket.off('getOnlineUsers');
     };
-  }, [onlineusers,dispatch]);
+  }, [dispatch]);
 
   const filteredUsers = showOnlineOnly
     ? users?.filter((user) => onlineusers.includes(user._id))
