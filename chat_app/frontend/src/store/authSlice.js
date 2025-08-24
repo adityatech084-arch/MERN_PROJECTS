@@ -82,7 +82,9 @@ const authSlice = createSlice({
     initialState,
     reducers:{
         setOnlineUsers(state,action){
-            state.onlineusers = action.payload;
+               state.onlineusers = action.payload.map(u => 
+      typeof u === "object" ? u._id : u
+    );
         },
     },
     extraReducers:(builder) =>{
