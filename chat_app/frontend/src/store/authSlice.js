@@ -49,6 +49,7 @@ export const logout = createAsyncThunk("user/sign-out",async(_,thunkApi)=>{
 export const login = createAsyncThunk("user/sign-in",async(data,thunkApi)=>{
     try {
      const res=   await axiosInstance.post("/user/sign-in",data);
+        console.log(res.data);
         connectSocket(res.data._id)
         toast.success("Logged in sucesufully");
         return res.data
