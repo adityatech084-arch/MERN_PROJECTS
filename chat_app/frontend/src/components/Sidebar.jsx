@@ -118,6 +118,7 @@ function Sidebar() {
       dispatch(getUsers());
     });
   socket.on('getOnlineUsers', (usersOnlineArray) => {
+       console.log(usersOnlineArray);
     dispatch(setOnlineUsers(usersOnlineArray)); // 🟢 update Redux
   });
     // Cleanup to avoid memory leaks
