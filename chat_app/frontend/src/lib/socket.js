@@ -3,6 +3,7 @@ import { io } from "socket.io-client";
 let socket = null;
 
 export const connectSocket = (userId) => {
+  console.log(userId);
 
   socket = io(import.meta.env.VITE_API_BASE_URL, {
     query: { userId },
