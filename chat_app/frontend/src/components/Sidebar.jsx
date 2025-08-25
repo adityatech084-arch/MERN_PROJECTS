@@ -110,7 +110,7 @@ function Sidebar() {
   const dispatch = useDispatch();
  useEffect(() => {
     const socket = getSocket();
-
+  if (!socket) return;
     dispatch(getUsers());
 
     
