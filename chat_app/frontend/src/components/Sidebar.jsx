@@ -106,7 +106,7 @@ function Sidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // mobile toggle
   const { users, selectedUser, isUserLoading } = useSelector((state) => state.chat);
   const { onlineusers } = useSelector((state) => state.auth);
- 
+ console.log(onlineusers);
   const dispatch = useDispatch();
  useEffect(() => {
     const socket = getSocket();
