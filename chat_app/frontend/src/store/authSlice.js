@@ -6,7 +6,7 @@ import {toast} from 'react-toastify'
 export const getUser = createAsyncThunk("user/me",async(_,thunkApi)=>{
     try {
         const res = await axiosInstance.get("/user/me")
-        connectSocket(res.data.user);
+        connectSocket(res.data.user._id);
         return res.data.user;
     } catch (error) {
         console.log("error",error);
