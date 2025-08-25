@@ -20,7 +20,7 @@ export const getUser = createAsyncThunk("user/me",async(_,thunkApi)=>{
 export const signup = createAsyncThunk('user/sign-up',async(data,thunkApi)=>{
     try {
         const res = await axiosInstance.post("/user/sign-up",data)
-        connectSocket(res.data);
+        connectSocket(res.data._id);
         toast.success("accounte created sucesufully");
         return res.data;
     } catch (error) {
@@ -48,7 +48,7 @@ export const logout = createAsyncThunk("user/sign-out",async(_,thunkApi)=>{
 export const login = createAsyncThunk("user/sign-in",async(data,thunkApi)=>{
     try {
      const res=   await axiosInstance.post("/user/sign-in",data);
-        connectSocket(res.data)
+        connectSocket(res.data._id)
         toast.success("Logged in sucesufully");
         return res.data
     } catch (error) {
