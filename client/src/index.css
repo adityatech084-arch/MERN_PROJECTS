@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Poppins:ital,wght@0,100;0,300;0,600;0,700;0,800;0,900;1,300;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ================================
+   THEME TOKENS
+================================ */
+@theme {
+  --font-sans: "Inter", "Poppins", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-alfa: "Alfa Slab One", sans-serif;
+  --font-tasa: "TASA Explorer", sans-serif;
+
+  --color-sidebar-bg: #f9fafb;
+  --color-accent-blue: #3b82f6;
+  --color-accent-purple: #8b5cf6;
+  --color-accent-indigo: #6366f1;
+  --color-accent-green: #10b981;
+  --color-app-border: #e5e7eb;
+
+  --breakpoint-end-screen: 1850px;
+}
+
+/* ================================
+   BASE STYLES
+================================ */
+@layer base {
+  body {
+    @apply font-sans antialiased text-[#1d1c1d] bg-white;
+  }
+
+  html.dark body {
+    @apply bg-black text-white;
+  }
+}
+
+/* ================================
+   COMPONENTS & UTILITIES
+================================ */
+@layer components {
+  /* Main Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar { width: 8px; }
+  .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { 
+    background: #d1d1d1; 
+    border-radius: 4px; 
+    border: 2px solid white; 
+  }
+
+  /* Sidebar Scrollbar */
+  .sidebar-scrollbar::-webkit-scrollbar { width: 4px; }
+  .sidebar-scrollbar::-webkit-scrollbar-thumb { 
+    background: #e5e7eb; 
+    border-radius: 2px; 
+  }
+
+  /* Glass Effect */
+  .glass-sidebar {
+    background: rgba(249, 250, 251, 0.8);
+    backdrop-filter: blur(12px);
+  }
+
+  /* Message Formatting */
+  .message-content blockquote { 
+    border-left: 3px solid #e2e2e2; 
+    padding-left: 12px; 
+    margin: 4px 0; 
+    color: #616061; 
+  }
+  
+  .message-content code { 
+    background: #f8f8f8; 
+    padding: 2px 4px; 
+    border-radius: 4px; 
+    font-family: monospace; 
+    font-size: 0.85rem; 
+  }
+  
+  .message-content pre { 
+    background: #f8f8f8; 
+    padding: 8px; 
+    border-radius: 4px; 
+    border: 1px solid #e2e2e2; 
+    margin-top: 4px; 
+    font-family: monospace; 
+    font-size: 0.85rem; 
+    overflow-x: auto; 
+  }
+}
