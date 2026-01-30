@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import { AuthProtector } from './protector/protect'
 
 function App() {
+  // new version add on kara hai v1
   return (
     <>
 <Routes>
